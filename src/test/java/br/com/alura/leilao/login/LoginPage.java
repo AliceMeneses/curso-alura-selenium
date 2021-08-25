@@ -5,6 +5,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
 import br.com.alura.PageObject;
+import br.com.alura.leilao.LeiloesPage;
 
 public class LoginPage extends PageObject{
 
@@ -24,8 +25,9 @@ public class LoginPage extends PageObject{
 		getBrowser().findElement(By.name("password")).sendKeys(senha);
 	}
 
-	public void efetuarLogin() {
+	public LeiloesPage efetuarLogin() {
 		getBrowser().findElement(By.id("login-form")).submit();
+		return new LeiloesPage(getBrowser());
 	}
 	
 	public boolean isPaginaDeLogin() {
