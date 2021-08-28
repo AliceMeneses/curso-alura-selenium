@@ -58,6 +58,10 @@ public class LeiloesPage extends PageObject{
 				&& colunaValorInicial.getText().equals(valorInicial);
 	}
 
+	public boolean isPaginaAtual() {
+		return super.getBrowser().getCurrentUrl().equals(URL_LEILOES);
+	}
+
 	
 	
 }
